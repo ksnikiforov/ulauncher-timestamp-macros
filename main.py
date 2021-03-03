@@ -22,9 +22,12 @@ class KeywordQueryEventListener(EventListener):
     def on_event(self, event, extension):
         items = []
         logger.info('preferences %s' % json.dumps(extension.preferences))
-
+        
+        today = datetime.date.today().strftime("%d %B, %Y")
+        time = datetime.datetime.now().strftime("%H:%M:%S")
+        
         items.append(ExtensionResultItem(icon='images/icon.png',
-                                         name='{0:%Y-%m-%d %H:%M}'.format(datetime.datetime.now()),
+                                         name=f'{time} | {today}',
                                          description='',
                                          on_enter=CopyToClipboardAction(
                                              '{0:%Y-%m-%d %H:%M}'.format(datetime.datetime.now()))))
