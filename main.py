@@ -24,8 +24,8 @@ class KeywordQueryEventListener(EventListener):
         logger.info('preferences %s' % json.dumps(extension.preferences))
 
         items.append(ExtensionResultItem(icon='images/icon.png',
-                                         name='{0:%Y-%m-%d %H:%M}'.format(datetime.datetime.now()),
-                                         description=''),
+                                         name='YYYY-MM-DD',
+                                         description='{0:%Y-%m-%d}'.format(datetime.datetime.now()),
                                          on_enter=CopyToClipboardAction(
                                              '{0:%Y-%m-%d %H:%M}'.format(datetime.datetime.now()))))
         
