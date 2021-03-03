@@ -24,7 +24,7 @@ class KeywordQueryEventListener(EventListener):
         logger.info('preferences %s' % json.dumps(extension.preferences))
         
         today = datetime.date.today().strftime("%d %B, %Y")
-        time = datetime.datetime.now().strftime("%H:%M:%S")
+        time = datetime.datetime.now().strftime("%H:%M")
         
         items.append(ExtensionResultItem(icon='images/icon.png',
                                          name=f'{time} | {today}',
